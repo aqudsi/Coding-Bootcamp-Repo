@@ -1,0 +1,16 @@
+const path = require("path");
+//https://expressjs.com/en/guide/routing.html#express-router
+const router = require("express").Router();
+const apiRoutes = require("./api");
+
+// API Routes
+router.use("/api", apiRoutes);
+
+// If no API routes are hit, send the React app
+router.use(function(req, res) {
+//https://nodejs.org/api/path.html#path_path_join_paths
+//Using __dirname gives an absolute path to your current working directory
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
+module.exports = router;

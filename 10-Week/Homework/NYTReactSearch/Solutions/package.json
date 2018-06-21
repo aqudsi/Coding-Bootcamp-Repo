@@ -1,0 +1,16 @@
+{
+  "name": "nyt-react-hw",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.10"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "proxy": "http://localhost:4000"
+}
